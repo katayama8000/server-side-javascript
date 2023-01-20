@@ -13,10 +13,7 @@ const facilityUserConverter = {
     const data = snapshot.data();
     data.id = snapshot.id;
     data.birthDate = data.birthDate.toDate();
-    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-    if (data.dischargeDate) {
-      data.dischargeDate = data.dischargeDate.toDate();
-    }
+    if (data.dischargeDate) data.dischargeDate = data.dischargeDate.toDate();
     return Object.assign({}, data) as TFacilityUser;
   },
 };
