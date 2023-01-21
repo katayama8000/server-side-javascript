@@ -13,3 +13,5 @@ export GOOGLE_APPLICATION_CREDENTIALS=秘密鍵のパス
 ---
 
 - [Params](https://docs.nestjs.com/custom-decorators#param-decorators)
+
+- [DI の分かりやすい説明](https://blog.shgnkn.io/dependency-injection-in-nestjs/)

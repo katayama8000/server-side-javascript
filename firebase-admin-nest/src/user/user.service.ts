@@ -1,11 +1,9 @@
-import { Injectable } from '@nestjs/common';
 import { firestore } from 'firebase-admin';
 import * as admin from 'firebase-admin';
 import facilityUserConverter from '../lib/converter';
 import { TFacilityUser, FacilityUser } from '../types/user.model';
 import dayjs from 'dayjs';
 
-@Injectable()
 export class UserService {
   DB: firestore.Firestore;
   constructor() {

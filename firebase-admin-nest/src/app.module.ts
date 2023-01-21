@@ -7,9 +7,10 @@ import { Test1Service } from './test1/test1.service';
 import { Test1Controller } from './test1/test1.controller';
 import { Test2Service } from './test2/test2.service';
 import { Test2Controller } from './test2/test2.controller';
+import { UserModule } from './user/user.module';
 
 @Module({
-  imports: [ConfigModule.forRoot({ isGlobal: true })],
+  imports: [ConfigModule.forRoot({ isGlobal: true }), UserModule],
   controllers: [
     AppController,
     UserController,

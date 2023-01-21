@@ -5,11 +5,7 @@ export class Test1Service {
   constructor() {
     console.log('constructor');
   }
-  getUser() {
-    return {
-      name: 'john',
-      age: 20,
-      country: 'USA',
-    };
+  getName() {
+    return { name: 'john' };
   }
 }

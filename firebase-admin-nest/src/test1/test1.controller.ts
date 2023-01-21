@@ -8,7 +8,7 @@ export class Test1Controller {
   test2Service = new Test2Service();
   @Get()
   getUser() {
-    return this.test1Service.getUser();
+    return this.test1Service.getName();
   }
 
   //   test1Service = new Test1Service();
@@ -16,6 +16,7 @@ export class Test1Controller {
   //   getUser() {
   //     return this.test1Service.getUser();
   //   }
+
   @Get('test2')
   getUserTest2() {
     return this.test2Service.getUser;
