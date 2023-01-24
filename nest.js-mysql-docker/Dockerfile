@@ -7,3 +7,6 @@ COPY package*.json /api-server/
 
 RUN npm i
 CMD [ "npm", "run", "start:dev"]
+
+# RUN yarn install
+# CMD [ "yarn", "start:dev"]
