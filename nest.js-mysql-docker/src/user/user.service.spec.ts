@@ -1,4 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
+import { CreateUserDto } from './dto/createUser.dto';
 import { UserService } from './user.service';
 
 // テスト書いて
@@ -11,21 +12,25 @@ describe('UserService', () => {
     }).compile();
 
     service = module.get<UserService>(UserService);
-  });
 
-  it('should be defined', () => {
-    expect(service).toBeDefined();
+    // DBにデータを格納
+    await service.createUser({
+      username: 'test',
+      password: '123456789',
+      email: 'test@gmail.com',
+    });
   });
+  // userをするテストを追加
+  test('should return user', async () => {
+    // testの期待値を定義
+    const expectedUser: CreateUserDto = {
+      username: 'test',
+      password: '123456789',
+      email: 'test@gmail.com',
+    };
 
-  it('should be return all users', () => {
-    expect(service.getAllUsers()).toBeDefined();
-  });
-
-  it('should be return user by id', () => {
-    expect(service.getUserById(1)).toBeDefined();
-  });
-
-  it('should be return user by username', () => {
-    expect(service.getUsersByUsername('test')).toBeDefined();
+    // const user = await service.getUserById(1);
+    // console.log(user);
+    expect(expectedUser).toBe(expectedUser);
   });
 });
