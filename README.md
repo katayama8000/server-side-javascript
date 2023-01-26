@@ -5,3 +5,4 @@
 3. firebase-node
 4. firebase-admin-nest
 5. nest.js-mysql-docker
+6. nestjs-typeorm-jest-sample
