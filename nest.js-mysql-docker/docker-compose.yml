@@ -11,7 +11,7 @@ services:
       - type: bind
         source: .
         target: /api-server
-    #ここから追記
+
     depends_on:
       - db-server
   db-server:
