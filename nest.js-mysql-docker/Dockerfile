@@ -5,8 +5,5 @@ RUN npm i -g @nestjs/cli
 WORKDIR /api-server
 COPY package*.json /api-server/
 
-RUN npm i
-CMD [ "npm", "run", "start:dev"]
-
-# RUN yarn install
-# CMD [ "yarn", "start:dev"]
+RUN yarn run install
+CMD [ "yarn","run", "start:dev"]

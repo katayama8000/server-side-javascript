@@ -11,3 +11,8 @@ curl --location --request POST 'localhost:3000/users/create' \
 # getAllUser
 curl --location --request GET 'localhost:3000/users/all'
 ```
+
+```bash
+docker compose up -d
+docker compose down
+```

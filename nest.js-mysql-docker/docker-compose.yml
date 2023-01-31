@@ -21,9 +21,20 @@ services:
     restart: always
     ports:
       - '3306:3306'
+
+    # MYSQLを永続化するために、volumesを追加する
+    # volumes:
+    #   - db_data:/var/lib/mysql
+
+    volumes:
+      - type: volume
+        source: db_data
+        target: /var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: develop
       MYSQL_USER: develop
       MYSQL_PASSWORD: password
-#ここまで追記
+
+volumes:
+  db_data:

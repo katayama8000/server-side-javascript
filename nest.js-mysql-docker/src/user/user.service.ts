@@ -11,8 +11,10 @@ export class UserService {
     private readonly userRepository: Repository<UserEntity>,
   ) {}
 
-  getAllUsers(): Promise<UserEntity[]> {
-    return this.userRepository.find();
+  async getAllUsers(): Promise<UserEntity[]> {
+    const users = await this.userRepository.find();
+    if (users.length === 0) throw new Error('No users found');
+    return users;
   }
 
   async getUsersByUsername(username: string): Promise<UserEntity[]> {
