@@ -9,11 +9,11 @@ export class UserService {
   constructor() {
     this.DB = admin.firestore();
   }
-  getUser() {
-    return {
-      name: 'John Doe',
-      age: 42,
-    };
+  async getTest1User() {
+    console.log('getUser');
+    const userRef = this.DB.collection('test1').doc('user');
+    const userDoc = await userRef.get();
+    return userDoc.data();
   }
 
   async findAll(facilityId: string) {

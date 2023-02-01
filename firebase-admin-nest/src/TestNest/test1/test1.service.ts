@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Test2Service } from 'src/test2/test2.service';
+import { Test2Service } from 'src/TestNest/test1/test2/test2.service';
 
 @Injectable()
 export class Test1Service {

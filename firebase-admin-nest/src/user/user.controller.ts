@@ -5,9 +5,10 @@ import { UserService } from './user.service';
 @Controller('user')
 export class UserController {
   userService = new UserService();
-  @Get('id')
-  getUser() {
-    return this.userService.getUser();
+
+  @Get('test1')
+  getTest1User() {
+    return this.userService.getTest1User();
   }
 
   @Get(':facilityId/facility-users')

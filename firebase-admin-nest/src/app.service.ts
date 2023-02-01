@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { Test1Service } from './test1/test1.service';
-import { Test2Service } from './test2/test2.service';
+import { Test1Service } from './TestNest/test1/test1.service';
+import { Test2Service } from './TestNest/test1/test2/test2.service';
 
 @Injectable()
 export class AppService {
