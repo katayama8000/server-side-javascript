@@ -11,6 +11,11 @@ export class UserController {
     return this.userService.getTest1User();
   }
 
+  @Get('family')
+  getFamilyUser() {
+    return this.userService.getFamilyUser();
+  }
+
   @Get(':facilityId/facility-users')
   findAll(@Param('facilityId') facilityId: string): Promise<FacilityUser[]> {
     return this.userService.findAll(facilityId);
