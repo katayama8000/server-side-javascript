@@ -5,7 +5,7 @@ import { Test2Service } from './TestNest/test1/test2/test2.service';
 @Injectable()
 export class AppService {
   getHello(): string {
-    return 'Hello World!';
+    return 'Hello World from Nest!';
   }
 
   error404() {

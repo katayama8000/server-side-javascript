@@ -9,7 +9,6 @@ export GOOGLE_APPLICATION_CREDENTIALS=秘密鍵のパス
 echo $GOOGLE_APPLICATION_CREDENTIALS
 ```
 
-
 4. yarn start:dev
 
 ---
@@ -19,9 +18,18 @@ echo $GOOGLE_APPLICATION_CREDENTIALS
 - [DI の分かりやすい説明](https://blog.shgnkn.io/dependency-injection-in-nestjs/)
 
 ---
+
 "project_id": "doctormate-tech-admin",
 
 ---
+
 ```
 http://localhost:3000/user/test/facility-users
 ```
+
+get
+`curl localhost:3000/auth/test/12`  
+post
+`curl -X POST http://localhost:3000/auth/create`  
+post body
+`curl -X POST -d 'name=太郎' http://localhost:3000/auth/create`

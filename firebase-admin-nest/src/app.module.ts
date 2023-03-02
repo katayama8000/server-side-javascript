@@ -8,9 +8,10 @@ import { Test1Controller } from './TestNest/test1/test1.controller';
 import { Test2Service } from './TestNest/test1/test2/test2.service';
 import { Test2Controller } from './TestNest/test1/test2/test2.controller';
 import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
-  imports: [ConfigModule.forRoot({ isGlobal: true }), UserModule],
+  imports: [ConfigModule.forRoot({ isGlobal: true }), UserModule, AuthModule],
   controllers: [
     AppController,
     UserController,
