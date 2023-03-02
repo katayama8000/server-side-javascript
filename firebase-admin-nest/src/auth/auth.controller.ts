@@ -1,15 +1,17 @@
 import { Controller, Get, Post, Req, HttpException } from '@nestjs/common';
 import { ApiResponse } from '@nestjs/swagger';
 import { Request } from 'express';
+import { authUser } from 'src/lib/authUser';
 import { AuthService } from './auth.service';
 
 @Controller('auth')
 export class AuthController {
   @Post('auth')
-  authfirebase(@Req() request: Request) {
+  async authfirebase(@Req() request: Request) {
     const idToken = request.body.id_token;
     const authService = new AuthService();
-    authService.verifyIdToken(idToken);
+    const realIdToken = await authUser();
+    if (realIdToken) authService.verifyIdToken(realIdToken.uid);
     console.log(idToken);
     return { message: 'auth' };
   }
@@ -23,6 +25,7 @@ export class AuthController {
   @ApiResponse({ status: 304, description: 'I am crazy' })
   test() {
     // apiresponseの内容を表示
+    authUser();
     return 'auth';
   }
 
