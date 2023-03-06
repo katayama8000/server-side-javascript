@@ -3,7 +3,7 @@ import { getAuth, UserRecord } from 'firebase-admin/auth';
 export const authUser = async (): Promise<void | UserRecord> => {
   const user = getAuth()
     .createUser({
-      email: 'authUser1@example.com',
+      email: 'authUser2@example.com',
       emailVerified: false,
       //   phoneNumber: '+11234567890',
       password: 'secretPassword',

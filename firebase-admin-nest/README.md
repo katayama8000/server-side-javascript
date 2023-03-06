@@ -33,3 +33,7 @@ post
 `curl -X POST http://localhost:3000/auth/create`  
 post body
 `curl -X POST -d 'name=太郎' http://localhost:3000/auth/create`
+
+---
+
+## [参考記事](https://firebase.google.com/docs/auth/admin/verify-id-tokens?hl=ja)
