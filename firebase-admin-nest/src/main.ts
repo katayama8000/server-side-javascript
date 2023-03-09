@@ -2,6 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { initializeApp } from 'firebase-admin/app';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import http2 = require('node:http2');
 
 async function bootstrap() {
   initializeApp();
