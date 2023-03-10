@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  api-server:
+    container_name: nest-cloudrun
+    build: .
+    tty: true
+    restart: always
+    ports:
+      - '3000:3000'
+    volumes:
+      - type: bind
+        source: .
+        target: /src
