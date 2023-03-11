@@ -8,6 +8,7 @@ services:
     ports:
       - '3000:3000'
     volumes:
-      - type: bind
-        source: .
-        target: /src
+      # - type: bind
+      #   source: .
+      #   target: /src
+      - .:/src
