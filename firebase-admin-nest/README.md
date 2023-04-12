@@ -37,3 +37,7 @@ post body
 ---
 
 ## [参考記事](https://firebase.google.com/docs/auth/admin/verify-id-tokens?hl=ja)
+
+## cloud functions
+
+- [firestore のドキュメントの変更をトリガーにする](https://cloud.google.com/firestore/docs/extend-with-functions?hl=ja)
