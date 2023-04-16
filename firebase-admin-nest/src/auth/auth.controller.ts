@@ -9,10 +9,15 @@ export class AuthController {
   @Post('auth')
   async authfirebase(@Req() request: Request) {
     const idToken = request.body.id_token;
+    console.log(idToken);
     const authService = new AuthService();
     const realIdToken = await authUser();
-    if (realIdToken) authService.verifyIdToken(realIdToken.uid);
-    console.log(idToken);
+    console.log(realIdToken);
+    if (realIdToken) {
+      console.log('idtoken is true');
+      console.log(realIdToken.customClaims.admin);
+      authService.verifyIdToken(realIdToken.uid);
+    }
     return { message: 'auth' };
   }
 
