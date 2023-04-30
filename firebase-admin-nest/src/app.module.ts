@@ -9,14 +9,17 @@ import { Test2Service } from './TestNest/test1/test2/test2.service';
 import { Test2Controller } from './TestNest/test1/test2/test2.controller';
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
+import { CityController } from './city/city.controller';
+import { CityModule } from './city/city.module';
 
 @Module({
-  imports: [ConfigModule.forRoot({ isGlobal: true }), UserModule, AuthModule],
+  imports: [ConfigModule.forRoot({ isGlobal: true }), UserModule, AuthModule, CityModule],
   controllers: [
     AppController,
     UserController,
     Test1Controller,
     Test2Controller,
+    CityController,
   ],
   providers: [AppService, Test1Service, Test2Service],
 })
