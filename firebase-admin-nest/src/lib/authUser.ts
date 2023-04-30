@@ -31,3 +31,13 @@ export const authUser = async (): Promise<void | UserRecord> => {
     throw new Error('authUser error');
   }
 };
+
+export const loginUser = async (): Promise<void | UserRecord> => {
+  try {
+    const user = await getAuth().getUserByEmail('authUser@example.com');
+    return user;
+  } catch (e) {
+    console.log(e);
+    throw new Error('loginUser error');
+  }
+};
