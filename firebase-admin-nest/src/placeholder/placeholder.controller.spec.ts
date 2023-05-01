@@ -2,6 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { PlaceholderController } from './placeholder.controller';
 import { PlaceholderService } from './placeholder.service';
 import { user } from './constant/user.const';
+import { post1 } from './constant/post1.const';
 
 // jest.mock('./placeholder.service');
 
@@ -39,5 +40,15 @@ describe('PlaceholderController', () => {
 
     expect(await controller.getUser()).toBe(user);
     expect(mockGetUser).toHaveBeenCalled();
+  });
+
+  test('placeholder/1で戻り値の確認', async () => {
+    const mockGetComments = jest
+      .spyOn(PlaceholderService.prototype, 'getComments')
+      .mockResolvedValue(Promise.resolve(post1));
+
+    expect(await controller.getComments(1)).toBe(post1);
+    expect(mockGetComments).toHaveBeenCalled();
+    expect(mockGetComments).toHaveBeenCalledWith(1);
   });
 });
