@@ -1,11 +1,13 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { PlaceholderController } from './placeholder.controller';
 import { PlaceholderService } from './placeholder.service';
-import { UserIntercafe } from './interface/user.interface';
 import { user } from './constant/user.const';
+
+// jest.mock('./placeholder.service');
 
 describe('PlaceholderController', () => {
   let controller: PlaceholderController;
+  let service: PlaceholderService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -14,6 +16,7 @@ describe('PlaceholderController', () => {
     }).compile();
 
     controller = module.get<PlaceholderController>(PlaceholderController);
+    service = module.get<PlaceholderService>(PlaceholderService);
   });
 
   test('should be defined', () => {
@@ -25,7 +28,6 @@ describe('PlaceholderController', () => {
     const mockGetUser = jest
       .spyOn(PlaceholderService.prototype, 'getUser')
       .mockResolvedValue(Promise.resolve(user));
-
     expect(await controller.getUser()).toBe(user);
     expect(mockGetUser).toHaveBeenCalled();
   });
