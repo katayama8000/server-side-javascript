@@ -5,7 +5,7 @@ import { Test2Service } from './TestNest/test1/test2/test2.service';
 @Injectable()
 export class AppService {
   getHello(): string {
-    return 'Hello World from Nest!';
+    return '<h1 style= "text-align: center; font-size: 100px; font-weight: bold; background-color: yellow; color: blue;">Hello World from Nest and Firebase - admin!</h1>';
   }
 
   error404() {

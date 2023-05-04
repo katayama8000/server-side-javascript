@@ -3,6 +3,12 @@ import { UserIntercafe } from './interface/user.interface';
 import axios from 'axios';
 import { Post1Interface } from './interface/post1.interface';
 
+type postDataType = {
+  title: string;
+  body: string;
+  userId: number;
+};
+
 @Injectable()
 export class PlaceholderService {
   async getUser(): Promise<UserIntercafe> {
@@ -22,5 +28,18 @@ export class PlaceholderService {
     return axios
       .get(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`)
       .then((res) => res.data);
+  }
+
+  async tryPost(data: postDataType) {
+    const { title, body, userId } = data;
+    const ret = await axios
+      .post('https://jsonplaceholder.typicode.com/posts', {
+        title,
+        body,
+        userId,
+      })
+      .then((res) => res.data);
+    console.log(ret);
+    return ret;
   }
 }

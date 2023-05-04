@@ -18,10 +18,20 @@ describe('PlaceholderService', () => {
   });
 
   test('should render user', async () => {
-    // const mockGetUser = jest
-    //   .spyOn(PlaceholderService.prototype, 'getUser')
-    //   .mockResolvedValue(Promise.resolve(user));
-
     expect(await service.getUser()).toStrictEqual(user);
+  });
+
+  test('should work post corectly', async () => {
+    const data = {
+      title: 'foo',
+      body: 'bar',
+      userId: 1,
+    };
+    expect(await service.tryPost(data)).toStrictEqual({
+      id: 101,
+      title: 'foo',
+      body: 'bar',
+      userId: 1,
+    });
   });
 });

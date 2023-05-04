@@ -51,4 +51,23 @@ describe('PlaceholderController', () => {
     expect(mockGetComments).toHaveBeenCalled();
     expect(mockGetComments).toHaveBeenCalledWith(1);
   });
+
+  test('placeholderでpostの確認', async () => {
+    const data = {
+      title: 'foo',
+      body: 'bar',
+      userId: 1,
+    };
+    const mockTryPost = jest
+      .spyOn(PlaceholderService.prototype, 'tryPost')
+      .mockResolvedValue(Promise.resolve(data));
+
+    expect(await controller.tryPost(data)).toStrictEqual({
+      title: 'foo',
+      body: 'bar',
+      userId: 1,
+    });
+    expect(mockTryPost).toHaveBeenCalled();
+    expect(mockTryPost).toHaveBeenCalledWith(data);
+  });
 });

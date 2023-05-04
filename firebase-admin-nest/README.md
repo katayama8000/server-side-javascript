@@ -33,6 +33,8 @@ post
 `curl -X POST http://localhost:3000/auth/create`  
 post body
 `curl -X POST -d 'name=太郎' http://localhost:3000/auth/create`
+post json
+`curl -X POST -H "Content-Type: application/json" -d '{"name":"太郎"}' http://localhost:3000/auth/create`
 
 ---
 

@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { PlaceholderService } from './placeholder.service';
 import { UserIntercafe } from './interface/user.interface';
 
@@ -18,5 +18,13 @@ export class PlaceholderController {
   @Get(':postId')
   async getComments(@Param('postId') postId: number) {
     return this.placeholderService.getComments(postId);
+  }
+
+  @Post()
+  async tryPost(
+    @Body()
+    { title, body, userId }: { title: string; body: string; userId: number },
+  ) {
+    return this.placeholderService.tryPost({ title, body, userId });
   }
 }
