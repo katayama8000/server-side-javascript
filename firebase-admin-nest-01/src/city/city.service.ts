@@ -16,8 +16,11 @@ export class CityService {
   }
 
   async getCollection() {
+    console.log('getCollection');
     const citiesRef = this.DB.collection('cities');
+    console.log(citiesRef);
     const citiesSnapshot = await citiesRef.get();
+    console.log(citiesSnapshot);
     const snapshot = citiesSnapshot.docs.map((doc) => doc.data());
     console.log(snapshot);
     const countries = snapshot.map((city) => city.country);
