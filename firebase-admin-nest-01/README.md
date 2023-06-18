@@ -28,13 +28,21 @@ http://localhost:3000/user/test/facility-users
 ```
 
 get
-`curl localhost:3000/auth/test/12`  
+```bash
+curl localhost:3000/auth/test/12
+```
 post
-`curl -X POST http://localhost:3000/auth/create`  
+```bash
+curl -X POST http://localhost:3000/auth/create
+```  
 post body
-`curl -X POST -d 'name=太郎' http://localhost:3000/auth/create`
+```bash
+curl -X POST -d 'name=太郎' http://localhost:3000/auth/create
+```
 post json
-`curl -X POST -H "Content-Type: application/json" -d '{"name":"太郎"}' http://localhost:3000/auth/create`
+```bash
+`curl -X POST -H "Content-Type: application/json" -d '{"name":"太郎"}' http://localhost:3000/auth/create
+```
 
 ---
 
