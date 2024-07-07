@@ -8,7 +8,7 @@
     "typescript": "^5.5.3"
   },
   "scripts": {
-    "run": "npx ts-node src/index.ts"
+    "start": "npx ts-node src/index.ts"
   },
   "dependencies": {
     "puppeteer": "^22.12.1"
