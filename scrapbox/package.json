@@ -1,0 +1,16 @@
+{
+  "name": "scrapbox",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "typescript": "^5.5.3"
+  },
+  "scripts": {
+    "run": "npx ts-node src/index.ts"
+  },
+  "dependencies": {
+    "puppeteer": "^22.12.1"
+  }
+}
